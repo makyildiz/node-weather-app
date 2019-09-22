@@ -72,10 +72,7 @@ app.get('/weather', (req, res) => {
                 return res.send({error})
             }    
             
-            res.send({
-                location,
-                summary: `Boylam ${longitude}, Enlem: ${latitude}. Sıcaklık: ${forecast.temperature} derece. ${forecast.summary} Yağmur olasılığı %${forecast.rain}`
-            })
+            res.send({location, forecast})
         })  
     })
 })

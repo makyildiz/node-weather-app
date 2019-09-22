@@ -8,13 +8,7 @@ const weather = (longitude, latitude, callback) => {
         } else if (body.error) {
             callback(undefined, 'Unable to find the location. Try another!')
         } else {
-            callback(undefined, {
-                // longitude,
-                // latitude,
-                temperature: body.currently.temperature,
-                rain: body.currently.precipProbability,
-                summary: body.daily.data[0].summary
-            })
+            callback(undefined, 'Boylam: ' + longitude + ' Enlem: ' + latitude + ' ' + body.daily.data[0].summary + ' Şu anda ' + body.currently.temperature + ' derece. ' + 'Yağmur olasılığı %' + body.currently.precipProbability)
         }
     })
 }
